@@ -1,6 +1,6 @@
 """
 Usage:
-    python scripts/analyze_models.py \
+    python functions/analyze_models.py \
         --data_root data/kitti_mots_yolo \
         --eval_results runs/eval_results.json \
         --models YOLOv8n YOLOv8s YOLOv10n YOLOv11n \

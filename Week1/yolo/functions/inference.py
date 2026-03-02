@@ -4,7 +4,7 @@ Models compared:
   • YOLOv10 (Ultralytics, 2024)
   • YOLOv11 (Ultralytics, 2025)
 Usage:
-    python scripts/inference.py \
+    python functions/inference.py \
         --data_root data/kitti_mots_yolo \
         --conf 0.25 \
         --max_images 200 \

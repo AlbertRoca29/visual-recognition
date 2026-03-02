@@ -165,7 +165,7 @@ def main():
     parser.add_argument(
         "--kitti_root",
         type=Path,
-        default=Path("/home/mcv/datasets/C5/KITTI-MOTS"),
+        default=Path("/ghome/group06/mcv/datasets/C5/KITTI-MOTS"),
         help="Path to KITTI-MOTS root directory",
     )
     parser.add_argument(

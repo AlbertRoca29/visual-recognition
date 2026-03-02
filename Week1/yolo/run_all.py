@@ -30,7 +30,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--kitti_root", type=str, default="/home/mcv/datasets/C5/KITTI-MOTS"
+        "--kitti_root", type=str, default="/ghome/group06/mcv/datasets/C5/KITTI-MOTS"
     )
     parser.add_argument("--data_root", type=str, default="data/kitti_mots_yolo")
     parser.add_argument("--out_dir", type=str, default="runs/finetune")
@@ -122,7 +122,7 @@ def main():
         rc = run(
             [
                 py,
-                "dataset/kitti_mots_to_yolo.py",
+                "data/kitti_mots_to_yolo.py",
                 "--kitti_root",
                 args.kitti_root,
                 "--out_root",
@@ -134,14 +134,14 @@ def main():
 
     if "1c" in steps:
         rc = run(
-            [py, "scripts/inference.py"] + data_args + model_args + infer_args + base,
+            [py, "functions/inference.py"] + data_args + model_args + infer_args + base,
             "Step 1c – Inference with pre-trained YOLO models",
         )
         rc_log["step_1c_inference"] = rc
 
     if "1d" in steps:
         rc = run(
-            [py, "scripts/evaluate.py"] + data_args + model_args + infer_args + base,
+            [py, "functions/evaluate.py"] + data_args + model_args + infer_args + base,
             "Step 1d – COCO evaluation of pre-trained models",
         )
         rc_log["step_1d_eval_pretrained"] = rc
@@ -152,7 +152,7 @@ def main():
             train_extra.append("--all_aug_presets")
 
         rc = run(
-            [py, "scripts/train.py"]
+            [py, "functions/train.py"]
             + data_args
             + model_args
             + base
@@ -178,7 +178,7 @@ def main():
     if "1e2" in steps:
         weights_dir = Path(args.out_dir)
         rc = run(
-            [py, "scripts/evaluate.py"]
+            [py, "functions/evaluate.py"]
             + data_args
             + model_args
             + infer_args
@@ -194,7 +194,7 @@ def main():
             analysis_extra.append("--skip_robustness")
 
         rc = run(
-            [py, "scripts/analyze_models.py"]
+            [py, "functions/analyze_models.py"]
             + data_args
             + model_args
             + base

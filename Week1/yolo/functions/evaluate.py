@@ -1,6 +1,6 @@
 """
 Usage:
-    python scripts/evaluate.py \
+    python functions/evaluate.py \
         --data_root data/kitti_mots_yolo \
         --models YOLOv8n YOLOv10s YOLOv11m \
         --wandb_project C5-Object-Detection-YOLO

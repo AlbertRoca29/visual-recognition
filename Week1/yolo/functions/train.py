@@ -8,7 +8,7 @@ Augmentations tuned (all native YOLO):
   degrees / shear      — rotation & shear
 
 Usage:
-    python scripts/train.py \
+    python functions/train.py \
         --data_root data/kitti_mots_yolo \
         --models YOLOv8n YOLOv10s YOLOv11m \
         --epochs 50 \
