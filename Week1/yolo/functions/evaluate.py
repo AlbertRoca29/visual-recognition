@@ -256,8 +256,14 @@ def coco_evaluate_per_class(gt_dict: dict, preds: list[dict]) -> dict:
         eval_obj.params.iouThrs = np.array([0.50])
         eval_obj.evaluate()
         eval_obj.accumulate()
-        ap = eval_obj.stats[0]
-        per_class[f"AP50_{cat_name}"] = round(float(ap), 4)
+
+        # safe access: check if stats exists & has at least 1 element
+        if hasattr(eval_obj, "stats") and len(eval_obj.stats) > 0:
+            ap50 = float(eval_obj.stats[0])
+        else:
+            ap50 = 0.0
+
+        per_class[f"AP50_{cat_name}"] = round(ap50, 4)
 
     return per_class
 
