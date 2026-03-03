@@ -35,6 +35,8 @@ MODEL_ZOO = [
     ("YOLOv11n", "yolo11n.pt"),
     ("YOLOv11s", "yolo11s.pt"),
     ("YOLOv11m", "yolo11m.pt"),
+    ("YOLOv26m", "yolo26m.pt"),
+    ("YOLOv26s", "yolo26s.pt"),
 ]
 
 
