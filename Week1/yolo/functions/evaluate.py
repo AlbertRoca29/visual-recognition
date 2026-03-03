@@ -328,7 +328,7 @@ def main():
 
     for model_name, weights_default in zoo:
         if args.finetuned and args.weights_dir:
-            w = args.weights_dir / f"{model_name.lower()}_finetuned.pt"
+            w = args.weights_dir / f"{model_name}_medium" / "weights" / "best.pt"
             if not w.exists():
                 print(f"Fine-tuned weights not found: {w}. Skipping.")
                 continue
