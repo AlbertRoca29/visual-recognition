@@ -1,0 +1,10 @@
+torch>=2.0.0
+transformers>=4.35.0
+pillow>=10.0.0
+numpy>=1.25.0
+tqdm>=4.66.0
+pycocotools>=2.0.6
+
+# Added for image processing and augmentations used in Week1/DeTr
+opencv-python>=4.7.0
+albumentations>=1.3.0
